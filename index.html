@@ -47,21 +47,22 @@
     <section id="game" class="content-section glass">
         <h2 class="section-title">미니 게임: 네온 테트리스</h2>
         <div class="score-board">SCORE: <span id="score" class="highlight">0</span></div>
+        <p style="color: #bbb; margin-bottom: 15px;">
+            💻 PC: 방향키 이동 / 위로 회전 / 스페이스바 낙하<br>
+            📱 모바일: 화면 드래그 이동 / 화면 터치 회전
+        </p>
+        
         <div class="tetris-container">
             <canvas id="tetris" width="240" height="400"></canvas>
         </div>
+        
         <div class="mobile-controls">
-            <button id="btn-left">⬅️</button>
-            <button id="btn-rotate">↻</button>
-            <button id="btn-right">➡️</button>
-            <button id="btn-drop">⬇️</button>
+            <button id="btn-hard-drop">⏬ 뚝 떨어지기 (Hard Drop) ⏬</button>
         </div>
     </section>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
     </script>
     <script src="game.js"></script>
 </body>
