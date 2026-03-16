@@ -13,7 +13,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">홈</a></li>
             <li><a href="#skills">내 능력</a></li>
-            <li><a href="#contact">연락처</a></li>
+            <li><a href="#game">게임</a></li>
         </ul>
     </nav>
 
@@ -31,29 +31,38 @@
     <section id="skills" class="content-section">
         <h2 class="section-title">요즘 유행하는 유리 질감 디자인</h2>
         <div class="card-container">
-            <div class="card glass" onclick="alert('애플에서 자주 쓰는 고급 기술입니다!')">
+            <div class="card glass" onclick="alert('애플에서 자주 쓰는 기술!')">
                 <div class="icon">🔮</div>
                 <h3>트렌디한 유리 질감</h3>
                 <p>배경이 은은하게 비치는 효과 적용!</p>
             </div>
-            <div class="card glass" onclick="alert('마우스를 올리면 네온 빛이 납니다!')">
+            <div class="card glass" onclick="alert('빛이 납니다!')">
                 <div class="icon">✨</div>
                 <h3>화려한 애니메이션</h3>
-                <p>둥둥 떠다니고, 부드럽게 나타나는 효과!</p>
+                <p>부드럽게 나타나는 효과!</p>
             </div>
-            <div class="card glass" onclick="alert('스마트폰에서도 완벽합니다!')">
-                <div class="icon">📱</div>
-                <h3>모바일 완벽 대응</h3>
-                <p>어떤 화면에서도 깨지지 않고 예쁘게 보입니다.</p>
-            </div>
+        </div>
+    </section>
+
+    <section id="game" class="content-section glass">
+        <h2 class="section-title">미니 게임: 네온 테트리스</h2>
+        <div class="score-board">SCORE: <span id="score" class="highlight">0</span></div>
+        <div class="tetris-container">
+            <canvas id="tetris" width="240" height="400"></canvas>
+        </div>
+        <div class="mobile-controls">
+            <button id="btn-left">⬅️</button>
+            <button id="btn-rotate">↻</button>
+            <button id="btn-right">➡️</button>
+            <button id="btn-drop">⬇️</button>
         </div>
     </section>
 
     <script>
         function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
+            document.getElementById('navLinks').classList.toggle('active');
         }
     </script>
+    <script src="game.js"></script>
 </body>
 </html>
