@@ -8,10 +8,7 @@ body {
 }
 @keyframes gradientBG { 0% {background-position:0% 50%;} 50% {background-position:100% 50%;} 100% {background-position:0% 50%;} }
 
-.glass {
-    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
+.glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); }
 
 .navbar { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; padding: 15px 30px; box-sizing: border-box; z-index: 1000; }
 .logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
@@ -36,21 +33,20 @@ h1 { font-size: 3rem; animation: fadeInUp 1s ease; }
 .card:hover { transform: translateY(-10px); border-color: #e94560; }
 @keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
 
-/* 게임 구역 디자인 */
+/* 💡 게임 구역 & 모바일 최적화 디자인 */
 #game { max-width: 500px; margin: 50px auto; padding: 30px 10px; border-radius: 20px; }
 .score-board { font-size: 2rem; font-weight: bold; margin-bottom: 20px; }
-canvas { background: #111; border: 4px solid #4facfe; border-radius: 10px; box-shadow: 0 0 20px #4facfe; }
+canvas { 
+    background: #111; border: 4px solid #4facfe; border-radius: 10px; box-shadow: 0 0 20px #4facfe; cursor: pointer;
+    touch-action: none; /* 💡 핵심! 모바일에서 게임화면 드래그할 때 스크롤 안 내려가게 고정! */
+}
 
-/* 💡 모바일 조이패드 디자인 */
-.mobile-controls {
-    display: flex; justify-content: center; gap: 15px; margin-top: 20px;
+.mobile-controls { margin-top: 20px; padding: 0 20px; }
+#btn-hard-drop { 
+    width: 100%; max-width: 240px; padding: 15px; border-radius: 10px; border: 2px solid #e94560;
+    background: rgba(233, 69, 96, 0.8); color: white; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.2s;
 }
-.mobile-controls button {
-    width: 60px; height: 60px; font-size: 1.5rem; border-radius: 50%; border: none;
-    background: rgba(79, 172, 254, 0.3); color: white; cursor: pointer; backdrop-filter: blur(5px);
-    transition: 0.2s;
-}
-.mobile-controls button:active { background: #4facfe; transform: scale(0.9); }
+#btn-hard-drop:active { background: #e94560; transform: scale(0.95); }
 
 @media (max-width: 768px) {
     .hamburger { display: block; }
