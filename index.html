@@ -3,15 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 멋진 첫 홈페이지</title>
+    <title>센스 만점 포트폴리오</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome!</h1>
-        <p>전 세계 누구나 접속 가능한 제 첫 홈페이지입니다.</p>
-        <p>index.css로 완벽하게 분리해서 세팅했습니다!</p>
-        <a href="#" class="btn">자세히 보기</a>
-    </div>
+    <nav class="navbar glass">
+        <div class="logo">✨ MySpace</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">홈</a></li>
+            <li><a href="#skills">내 능력</a></li>
+            <li><a href="#contact">연락처</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-img">
+             <img src="profile.jpg" alt="내 프로필 사진">
+            </div>
+            <h1>안녕하세요, <span class="highlight">도전하는 사람</span>입니다.</h1>
+            <p>제 공간에 오신 것을 환영합니다!</p>
+            <a href="#skills" class="btn">구경하기 🚀</a>
+        </div>
+    </section>
+
+    <section id="skills" class="content-section">
+        <h2 class="section-title">요즘 유행하는 유리 질감 디자인</h2>
+        <div class="card-container">
+            <div class="card glass" onclick="alert('애플에서 자주 쓰는 고급 기술입니다!')">
+                <div class="icon">🔮</div>
+                <h3>트렌디한 유리 질감</h3>
+                <p>배경이 은은하게 비치는 효과 적용!</p>
+            </div>
+            <div class="card glass" onclick="alert('마우스를 올리면 네온 빛이 납니다!')">
+                <div class="icon">✨</div>
+                <h3>화려한 애니메이션</h3>
+                <p>둥둥 떠다니고, 부드럽게 나타나는 효과!</p>
+            </div>
+            <div class="card glass" onclick="alert('스마트폰에서도 완벽합니다!')">
+                <div class="icon">📱</div>
+                <h3>모바일 완벽 대응</h3>
+                <p>어떤 화면에서도 깨지지 않고 예쁘게 보입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
